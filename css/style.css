@@ -24584,11 +24584,6 @@ img.mfp-img {
 	content: '\f107';
 }
 
-/*
-*
-* Video BG
-* --------------------------------------------------
-*/
 .bg-vide {
 	position: relative;
 	z-index: 0;
@@ -24704,4 +24699,3 @@ img.mfp-img {
 	flex-wrap: nowrap;
 	white-space: nowrap;
   }
-  
