@@ -4,6 +4,12 @@ button:focus {
 	outline: none !important;
 }
 
+@keyframes cambiar{
+	0%{background-position: 0 50%;}
+	50%{background-position: 100% 50%;}
+	100%{background-position: 0 50%;}
+}
+
 @font-face {
 	font-family: "Montserrat";
 	src: url(/fonts/Montserrat.ttf);
@@ -107,12 +113,32 @@ body {
 	font-weight: 400;
 	letter-spacing: normal;
 	color: #151515;
-	background: #9CECFB;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #0052D4, #65C7F7, #9CECFB);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #0052D4, #65C7F7, #9CECFB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	width: 100%;
+	height: 100vh;
+	background: #0052D4;
+	background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
+	background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+
+	
 }
+
+/*background: #0052D4;
+background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
+background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);*/
+
+/*background: linear-gradient(45deg,#0052D4,#4364F7,#6FB1FC,#4364F7,#0052D4);
+	background-size: 400% 400%;
+	position: relative;
+	animation: cambiar 5s ease-in-out infinite;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;*/
+
 
 h1, h2, h3, h4, h5, h6, [class*='heading-'] {
 	margin-top: 0;
@@ -24699,3 +24725,36 @@ img.mfp-img {
 	flex-wrap: nowrap;
 	white-space: nowrap;
   }
+
+.wavy-line {
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+}
+.wavy-line:before {
+  content: attr(data-text);
+  position: relative;
+  top: -35px;
+  color: rgba(0,0,0,0);
+  width: calc(100% + 27px);
+  font-size: 4em;
+  text-decoration-style: wavy;
+  text-decoration-color: #25173A;
+  text-decoration-line: underline;
+  animation: animate .9s linear infinite;
+  -webkit-animation: animate .9s linear infinite;
+}
+
+@keyframes animate {
+  0% { left: -0px; }
+  100% { left: -30px;}
+}
+@-webkit-keyframes animate {
+  0% { left: -0px; }
+  100% { left: -30px;}
+}
+
+.wavy-line-green:before { text-decoration-color: #56AE5F; }
+.wavy-line-blue:before { text-decoration-color: #1FB5D1; }
+.wavy-line-yellow:before { text-decoration-color: #F9B930; }

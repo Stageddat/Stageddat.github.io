@@ -1390,3 +1390,35 @@
 		}
 	});
 }());
+
+function disableRightClick(e) {
+    var message = "Función deshabilitada";
+    if (!document.rightClickDisabled) {
+        if (document.all) {
+            document.attachEvent('onmousedown', disableRightClick);
+            document.attachEvent('onmouseup', enableRightClick);
+        } else {
+            document.addEventListener('mousedown', disableRightClick, false);
+            document.addEventListener('mouseup', enableRightClick, false);
+        }
+        document.rightClickDisabled = true;
+    }
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+function enableRightClick() {
+    if (document.all) {
+        document.detachEvent('onmousedown', disableRightClick);
+        document.detachEvent('onmouseup', enableRightClick);
+    } else {
+        document.removeEventListener('mousedown', disableRightClick, false);
+        document.removeEventListener('mouseup', enableRightClick, false);
+    }
+    document.rightClickDisabled = false;
+}
+document.oncontextmenu = disableRightClick;
