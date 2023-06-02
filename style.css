@@ -1,0 +1,56 @@
+body {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.lista {
+    color: white;
+    background-color: #2b2b2b;
+    border: red;
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 50px;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+          font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+    .lista{
+        width: 250px;
+    }
+}

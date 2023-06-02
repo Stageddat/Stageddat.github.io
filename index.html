@@ -1,199 +1,108 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Strategy Filtrer Test</title>
-    <style>
-body {
-  font-family: Arial, sans-serif;
-}
+<html lang="es">
 
-h1 {
-  text-align: center;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missatges</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+</head>
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  margin: 20px auto;
-  max-width: 800px;
-}
+<body>
+    <div class="lista" style="text-align: center;">
+        <h1>Accés ràpid</h1>
+        <a href="#entrada">1. Animació d'entrada</a><br><br>
+        <a href="#estilomensaje">2. Estil de missatge</a><br><br>
+        <a href="#entrada">3. Estil de [escrivint]</a>
+    </div>
+    <h1 id="entrada">1. Animació d'entrada</h1>
+    <div class="container">
+        <div>
+            <h3>Apropar</h3>
+            <video src="/animacion/Acercar.mp4" width="80%" height="auto" controls></video>
+        </div>
+        <div>
+            <h3>Aparèixer</h3>
+            <video src="/animacion/Aparecer.mp4" width="80%" height="auto" controls></video>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <h3>Lliscar (d'esquerra a dreta)</h3>
+            <video src="/animacion/deslizarID.mp4" width="80%" height="auto" controls></video>
+        </div>
+        <div>
+            <h3>Lliscar (de dreta a esquerra)</h3>
+            <video src="/animacion/deslizarDI.mp4" width="80%" height="auto" controls></video>
+        </div>
+    </div>
+    <h3 style="color: yellow;">El missatge llisca depenent de qui l'enviï</h3>
 
-.item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 
-@media (min-width: 600px) {
-  .container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-  }
-}
 
-    </style>
-  </head>
-    <h1>Strategy filters? (60% made by chatgpt lol)</h1>
-
-    <div>
-      <label for="map-type">Map Type:</label>
-      <select id="map-type">
-        <option value="">All</option>
-        <option value="hardcore">Hardcore</option>
-        <option value="special">Special</option>
-        <option value="normal">Normal</option>
-      </select>
+<h1 id="estilomensaje">2. Estil de missatge</h1>
+    <h3>Estil de Missatges (Grup)</h3>
+    <div class="container">
+        <div>
+            <h3>Clar Grup Android Sense perfil</h3>
+            <img width="80%" height="auto" src="/tipo/claro android grupal sin perfil receptor.png"></img>
+        </div>
+        <div>
+            <h3>Clar Grup Android Amb perfil</h3>
+            <img width="70%" height="auto" src="/tipo/Clar Grup Android perfil receptor.png"></img>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <h3>Fosc Grup Android Sense perfil</h3>
+            <img width="80%" height="auto" src="/tipo/Oscuro privado Android sin perfil receptor.png"></img>
+        </div>
+        <div>
+            <h3>Fosc Grup Android Amb perfil</h3>
+            <img width="80%" height="auto" src="/tipo/Oscuro Grup Android perfil receptor.png"></img>
+        </div>
     </div>
 
-    <div>
-      <label for="player-number">Player numbers:</label>
-      <select id="player-number">
-        <option value="">All</option>
-        <option value="solo">Solo</option>
-        <option value="duo">Duo</option>
-        <option value="trio">Trio</option>
-        <option value="quad">Quad</option>
-      </select>
+
+
+
+    <h3>Estil de Missatges (Privat)</h3>
+    <div class="container">
+        <div>
+            <h3>Clar Privat Android Sense perfil</h3>
+            <img width="80%" height="auto" src="tipo/privado/Clar privado Android sin perfil receptor.png"></img>
+        </div>
+        <div>
+            <h3>Clar Privat Android Amb perfil</h3>
+            <img width="70%" height="auto" src="tipo/privado/Clar privado Android perfil receptor.png"></img>
+        </div>
     </div>
-
-    <div>
-      <label for="strat-type">Strategy type:</label>
-      <select id="strat-type">
-        <option value="">All</option>
-        <option value="friendly-beginner">Friendly-beginner</option>
-        <option value="no-friendly-beginner">No friendly-beginner</option>
-      </select>
+    <div class="container">
+        <div>
+            <h3>Fosc Privat Android Sense perfil</h3>
+            <img width="80%" height="auto" src="tipo/privado/Oscuro privado Android sin perfil.png"></img>
+        </div>
+        <div>
+            <h3>Fosc Privat Android Amb perfil</h3>
+            <img width="80%" height="auto" src="tipo/privado/Oscuro privado Android perfil receptor.png"></img>
+        </div>
     </div>
-    <div id="strategies-container">
-    <div class="grid">
-      <div class="container">
-        <div class="item hardcore trio friendly-beginner">
-          <img
-            src="https://i.pinimg.com/originals/c7/1b/96/c71b967e2bf8970d93177680ff84be7f.png"
-            alt="EasyCore"
-          />
-          <h3>EasyCore</h3>
-          <p>Map type: Hardcore</p>
-          <p>Number player: Trio</p>
-          <p>Strat Type: Friendly-beginner</p>
-        </div>
+    <h3 style="color: yellow;">El missatge ha de ser tot en majúscula?</h3>
 
-        <div class="item hardcore solo no-friendly-beginner">
-          <img
-            src="https://i.pinimg.com/originals/c7/1b/96/c71b967e2bf8970d93177680ff84be7f.png"
-            alt="Firestorm"
-          />
-          <h3>Firestorm</h3>
-          <p>Map type: Hardcore</p>
-          <p>Number player: Solo</p>
-          <p>Strat Type: No friendly-beginner</p>
+    <h1 id="estiloescribiendo">3. Estil de "escrivint"</h1>
+    <div class="container">
+        <div>
+            <h3>Perfil</h3>
+            <img style="height: 150px;margin-right: 20px;" src="/escribiendo/arriba.png"></img>
         </div>
-
-        <div class="item hardcore duo no-friendly-beginner">
-          <img
-            src="https://i.pinimg.com/originals/c7/1b/96/c71b967e2bf8970d93177680ff84be7f.png"
-            alt="Double Hardcore Heroes"
-          />
-          <h3>Double Hardcore Heroes</h3>
-          <p>Map type: Hardcore</p>
-          <p>Number player: Duo</p>
-          <p>Strat Type: No friendly-beginner</p>
+        <div>
+            <h3>Missatge animat</h3>
+            <video src="/escribiendo/escribiendo.mp4" width="auto" height="200px" controls></video>
         </div>
-
-        <div class="item special duo no-friendly-beginner">
-          <img
-            src="https://i.pinimg.com/originals/c7/1b/96/c71b967e2bf8970d93177680ff84be7f.png"
-            alt="Nuclear pain"
-          />
-          <h3>Nuclear pain</h3>
-          <p>Map type: Special</p>
-          <p>Number player: Duo</p>
-
-          <p>Strat Type: No friendly-beginner</p>
-        </div>
-
-        <div class="item special duo friendly-beginner">
-          <img
-            src="https://i.pinimg.com/originals/c7/1b/96/c71b967e2bf8970d93177680ff84be7f.png"
-            alt="Pizza Part?"
-          />
-          <h3>Pizza Party?</h3>
-          <p>Map type: Special</p>
-          <p>Number player: Duo</p>
-          <p>Strat Type: Friendly-beginner</p>
-        </div>
-
-        <div class="item special quad friendly-beginner">
-          <img
-            src="https://i.pinimg.com/originals/c7/1b/96/c71b967e2bf8970d93177680ff84be7f.png"
-            alt="The Bounty Hunter (Quickdraw)"
-          />
-          <h3>The Bounty Hunter (Quickdraw)</h3>
-          <p>Map type: Special</p>
-          <p>Number player: Quad</p>
-          <p>Strat Type: Friendly-beginner</p>
-        </div>
-      </div>
     </div>
-    </div>
-    <div style="text-align: center;">
-    <p>No more strat D:</p>
-    <img style="width: 50%;height: 50%;" src="https://preview.redd.it/seek-on-his-way-to-make-you-a-furry-im-a-menace-to-society-v0-qo0tgwi3ngy91.png?auto=webp&s=eec8662969c237c844fe53619b2af8c9611e9ca7">
-    <p>Send feedback to nekoonichanuwuowofurrycutemom seek for new strat :D</p>
-  </div>
-<script>
-      // Función para actualizar la visualización de las estrategias según los filtros seleccionados
-      function updateStrategies() {
-        // Obtenemos los valores seleccionados en los filtros
-        const mapType = document.getElementById("map-type").value;
-        const playerNumber = document.getElementById("player-number").value;
-        const stratType = document.getElementById("strat-type").value;
+</body>
 
-        // Obtenemos todas las estrategias
-        const strategies = document.querySelectorAll(".item");
-
-        // Recorremos todas las estrategias y las ocultamos si no cumplen con los filtros
-        strategies.forEach((strategy) => {
-          const strategyMapType = strategy.classList.contains("hardcore")
-            ? "hardcore"
-            : "special";
-          const strategyPlayerNumber = strategy.classList.contains("solo")
-            ? "solo"
-            : strategy.classList.contains("duo")
-            ? "duo"
-            : strategy.classList.contains("trio")
-            ? "trio"
-            : "quad";
-          const strategyStratType = strategy.classList.contains(
-            "friendly-beginner"
-          )
-            ? "friendly-beginner"
-            : "no-friendly-beginner";
-
-          if (
-            (mapType && strategyMapType !== mapType) ||
-            (playerNumber && strategyPlayerNumber !== playerNumber) ||
-            (stratType && strategyStratType !== stratType)
-          ) {
-            strategy.style.display = "none";
-          } else {
-            strategy.style.display = "block";
-          }
-        });
-      }
-      // Agregamos un evento de cambio a cada filtro para actualizar la visualización de las estrategias
-      document.querySelectorAll("select").forEach((select) => {
-        select.addEventListener("change", updateStrategies);
-      });
-    </script>
-  </body>
 </html>
